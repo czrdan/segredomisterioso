@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segredo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.center-image {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+}
+
+h1, h2 {
+    color: white;
+    margin: 10px 0;
+}
+
+.btn-sim {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.btn-sim:hover {
+    background-color: #45a049;
+}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const btnSim = document.getElementById('btnSim');
+
+    btnSim.addEventListener('mouseover', function() {
+        // Gera novas posições aleatórias para o botão dentro da janela
+        const randomX = Math.floor(Math.random() * (window.innerWidth - btnSim.offsetWidth));
+        const randomY = Math.floor(Math.random() * (window.innerHeight - btnSim.offsetHeight));
+        
+        // Aplica as novas coordenadas ao botão
+        btnSim.style.position = 'absolute';
+        btnSim.style.left = randomX + 'px';
+        btnSim.style.top = randomY + 'px';
+    });
+});
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Segredo bloqueado...</h1>
+        <img src="https://cdn.discordapp.com/attachments/546112392329822210/1290112083601526846/c9eb536c-bf67-4aee-9bb8-46ac5db6a6ac.png?ex=66fb4601&is=66f9f481&hm=4c353320c6a998c5a5c86a5d84ccd92b5cfa3336929853f16d2004fe54d6f714&" alt="Imagem central" class="center-image">
+        <h2>Deseja continuar?</h2>
+        <button id="btnSim" class="btn-sim">Sim</button>
+    </div>
+</body>
+</html>
